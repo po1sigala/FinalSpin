@@ -15,13 +15,21 @@ CREATE TABLE details(
     first_name VARCHAR (20) NOT NULL,
     last_name VARCHAR (20) NOT NULL,
     full_name VARCHAR (20) NOT NULL,
-    fav_sites VARCHAR (20),
+    fav_sites VARCHAR (50),
     fav_site_search VARCHAR (20),
     fav_countries VARCHAR (20),
     fav_country_search VARCHAR (20),
-    recent_searches VARCHAR (20),
-    recent_sites VARCHAR (20),
+    recent_searches VARCHAR (50),
+    recent_sites VARCHAR (50),
     FOREIGN KEY(user_id) REFERENCES users(id),
     PRIMARY KEY(id)
 
 );
+CREATE TABLE popularSearches(
+    search VARCHAR(50),
+    timesSearched INT
+);
+CREATE TABLE popularCountries(
+    country VARCHAR(30),
+    timesSearched INT
+)
