@@ -1,7 +1,13 @@
 DROP DATABASE IF EXISTS spinCheck_DB;
-CREAT DATABASE spinCheck_DB;
+CREATE DATABASE spinCheck_DB;
 
 USE spinCheck_DB;
+CREATE TABLE users(
+    id INT NOT NULL AUTO_INCREMENT,
+    username VARCHAR (20) NOT NULL,
+    password VARCHAR (20) NOT NULL,
+    PRIMARY KEY (id)
+);
 
 CREATE TABLE details(
     id INT NOT NULL AUTO_INCREMENT,
@@ -15,13 +21,7 @@ CREATE TABLE details(
     fav_country_search VARCHAR (20),
     recent_searches VARCHAR (20),
     recent_sites VARCHAR (20),
-    FOREIGN KEY(user_id) REFERENCES users(id)
+    FOREIGN KEY(user_id) REFERENCES users(id),
     PRIMARY KEY(id)
 
-)
-CREATE TABLE users(
-    id INT NPT NULL AUTO_INCREMENT,
-    username VARCHAR (20) NOT NULL,
-    password VARCHAR (20) NOT NULL,
-    PRIMARY KEY (id)
-)
+);
