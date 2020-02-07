@@ -10,8 +10,11 @@ CREATE TABLE details(
     last_name VARCHAR (20) NOT NULL,
     full_name VARCHAR (20) NOT NULL,
     fav_sites VARCHAR (20),
-    fav_trends VARCHAR (20),
-    fav_searches VARCHAR (20),
+    fav_site_search VARCHAR (20),
+    fav_countries VARCHAR (20),
+    fav_country_search VARCHAR (20),
+    recent_searches VARCHAR (20),
+    recent_sites VARCHAR (20),
     FOREIGN KEY(user_id) REFERENCES users(id)
     PRIMARY KEY(id)
 
